@@ -47,20 +47,24 @@ export default {
   },
   methods: {
     login() {
-      this.$refs.formRule.validate(valid => {
+      this.$refs.formRule.validate (async (valid) => {
         if (valid) {
-          this.$http.post("/login", this.loginObj)
-          .then(res => {
+         var res=await this.$http.post("/login", this.loginObj)
+          
             const { meta, data } = res.data;
             if (meta.status == 200) {
               this.$message({
                 message: meta.msg,
                 type: "success"
               });
+              this.$router.push('/')
+            //   保存登录信息
+            window.localStorage.setItem('token',data.token)
+            //   console.log(res)
             } else {
               this.$message.error(meta.msg);
             }
-          });
+        
         }else{
             alert('参数不合法')
         }
