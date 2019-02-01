@@ -1,13 +1,10 @@
 <template>
-  <div id="app">
-    
-    <router-view/>
-  </div>
+    <div>login.vue</div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+
 }
 </script>
 
