@@ -4,13 +4,13 @@
         <h2>用户登录</h2>
       <el-form ref="myform" :model="loginObj" label-width="80px" label-position="top">
         <el-form-item label="用户名">
-          <el-input v-model="loginObj.username"></el-input>
+          <el-input type="text" v-model="loginObj.username"></el-input>
         </el-form-item>
         <el-form-item label="密码">
-          <el-input v-model="loginObj.password"></el-input>
+          <el-input type="password" v-model="loginObj.password"></el-input>
         </el-form-item>
         <el-form-item>
-           <el-button class="mybtn" type="primary">登录</el-button>
+           <el-button class="mybtn" type="primary" @click="login()">登录</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -28,6 +28,23 @@ export default {
 
        }
 
+   },
+   methods:{
+       login(){
+           this.$http.post('/login',this.loginObj)
+           .then(res=>{
+               const{meta,data}=res.data
+               if(meta.status==200){
+                   this.$message({
+                       message:meta.msg,
+                       type:'success'
+
+                   })
+               }else{
+                   this.$message.error(meta.msg)
+               }
+           })
+       }
    }
 }
 </script>
