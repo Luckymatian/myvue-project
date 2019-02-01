@@ -24,8 +24,7 @@
 export default {
     methods:{
         logout(){
-            // 清除用户登录信息，跳回登录页面
-            
+            // 清除用户登录信息，跳回登录页面   
         this.$confirm('即将退出系统, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',

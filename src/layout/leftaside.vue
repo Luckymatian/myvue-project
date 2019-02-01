@@ -2,6 +2,7 @@
      <el-aside width="200px">
           <el-menu
         :unique-opened='true'
+        :router="true"
       default-active="2"
       class="el-menu-vertical-demo"
       @open="handleOpen"
@@ -11,7 +12,7 @@
           <i class="el-icon-location"></i>
           <span>用户管理</span>
         </template>
-        <el-menu-item index="1-1">
+        <el-menu-item index="/users">
              <i class="el-icon-star-off"></i>
             <span>用户列表</span> 
         </el-menu-item>
