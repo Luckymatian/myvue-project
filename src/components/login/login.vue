@@ -57,7 +57,7 @@ export default {
                 message: meta.msg,
                 type: "success"
               });
-              this.$router.push('/')
+              this.$router.push('/home')
             //   保存登录信息
             window.localStorage.setItem('token',data.token)
             //   console.log(res)
