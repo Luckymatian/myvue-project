@@ -4,9 +4,7 @@
         :unique-opened='true'
         :router="true"
       default-active="2"
-      class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose">
+      class="el-menu-vertical-demo">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
